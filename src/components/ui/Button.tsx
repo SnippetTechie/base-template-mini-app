@@ -3,19 +3,13 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
 }
 
-export function Button({ children, className = "", isLoading = false, ...props }: ButtonProps) {
-  return (
-    <button
-      className={`w-full max-w-xs mx-auto block bg-[#7C65C1] text-white py-3 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#7C65C1] hover:bg-[#6952A3] ${className}`}
-      {...props}
-    >
-      {isLoading ? (
-        <div className="flex items-center justify-center">
-          <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full" />
-        </div>
-      ) : (
-        children
-      )}
-    </button>
-  );
-}
+    export function Button({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+      return (
+        <button
+          className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#0052FF] to-[#7F5FFF] text-white font-semibold shadow-lg glassmorphic hover:scale-105 transition-all border border-blue-400/30 drop-shadow-[0_0_10px_#0052FF]"
+          {...props}
+        >
+          {children}
+        </button>
+      );
+    }
